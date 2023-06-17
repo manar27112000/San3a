@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:san3a/shared/component/applocal.dart';
 import 'package:san3a/shared/component/component.dart';
 
 
@@ -10,7 +11,7 @@ class HelpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child:  Text('Help')),
+        title:  Center(child:  Text('${getLang(context,"Help")}')),
         actions: const [
           // AppBarIcons( icon: Icons.wechat, function: () {  },),
           // AppBarIcons( icon: Icons.menu, function: () {  },),
@@ -30,17 +31,17 @@ class HelpScreen extends StatelessWidget {
                         fit: BoxFit.cover)),
               ),
               TextFeild_(icon:Icons.person,
-                text: 'User Name',
+                text: '${getLang(context,"UserName")}',
                 maxLine: 1,
                 maxLength: 30,
                 keyboardType:TextInputType.name ,),
               TextFeild_(icon:Icons.person,
-                text: 'Email Address',
+                text: '${getLang(context,"EmailAddress")}',
                 maxLine: 1,
                 maxLength:40,
                 keyboardType:TextInputType.emailAddress ,),
               TextFeild_(
-                text: 'What happened ?',
+                text:'${getLang(context,"whatistheproblem")}',
                 keyboardType:TextInputType.multiline,
                 maxLine: null ,
                 maxLength: 200,
@@ -59,12 +60,11 @@ class HelpScreen extends StatelessWidget {
                     onPressed: (){},
                     child: Row(
 
-                      children: const [
+                      children:  [
 
 
                         SizedBox(width: 10.0,),
-                        Text(
-                          'Submit',
+                        Text('${getLang(context,"Submit")}',
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,

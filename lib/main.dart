@@ -3,6 +3,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:san3a/layout/cubit/cubit_layout.dart';
 import 'package:san3a/layout/cubit/states_layout.dart';
 import 'package:san3a/layout/san3a_layout.dart';
@@ -14,6 +15,7 @@ import 'package:san3a/modules/add_post_screen/cubit/post_cubit.dart';
 import 'package:san3a/modules/chat_screen/all_chats/cubit_chat/chat_cubit.dart';
 import 'package:san3a/modules/timeline/timeline_worker/Drawar.dart';
 import 'package:san3a/modules/timeline/timeline_worker/timeline_cubit/timeLine_cubit.dart';
+import 'package:san3a/shared/component/applocal.dart';
 import 'package:san3a/shared/component/constant.dart';
 import 'package:san3a/shared/cubit/bloc_observer.dart';
 import 'package:san3a/shared/network/local/cache_helper.dart';
@@ -57,6 +59,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return  MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => San3aLayoutCubit()..changeMode(fromShared: isDark , fromShared1: isOpen)),
@@ -75,13 +78,25 @@ class MyApp extends StatelessWidget {
           final cubit = San3aLayoutCubit.get(context);
          return  MaterialApp(
            debugShowCheckedModeBanner: false,
+         //  locale: Locale('en','US') ,
            theme: AppThemes.light,
            darkTheme: AppThemes.dark,
-           themeMode:
-           cubit.isDark
-               ? ThemeMode.dark
-               : ThemeMode.light,
+           themeMode: cubit.isDark ? ThemeMode.dark : ThemeMode.light,
            home: Login_Screen(),
+           localizationsDelegates:[
+             AppLocale.delegate,
+             GlobalMaterialLocalizations.delegate,
+             GlobalCupertinoLocalizations.delegate,
+           GlobalWidgetsLocalizations.delegate] ,
+           supportedLocales: [Locale("en",""),Locale("ar","")],
+           localeResolutionCallback: (currentLang,supportLang){
+             if(currentLang!=null){
+               for(Locale locale in supportLang){
+                 if(locale.languageCode==currentLang.languageCode){
+                   return currentLang;
+                 }}
+             }return supportLang.first;
+           },
          );
         },
       ),

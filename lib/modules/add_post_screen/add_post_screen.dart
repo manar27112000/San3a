@@ -36,7 +36,7 @@ class _AddScreenState extends State<AddScreen> {
               Navigator.pop(context);
             },
             icon:const Icon(Icons.arrow_back,color: Colors.black,),),
-          title: const Text('Create post',
+          title: const Text('Create post',//${getLang(context,"Createpost")}
             style: TextStyle(
               color: Colors.black,
               fontSize: 18,
@@ -46,7 +46,7 @@ class _AddScreenState extends State<AddScreen> {
               padding: const EdgeInsets.all(8.0),
               child: defaultButton(
                   background: cubit.ColorButton,
-                  text: 'Post',
+                  text: 'Post',//${getLang(context,"Post")}
                   function: (){
                     if (formkey.currentState!.validate()){
                       print(postController);
@@ -176,7 +176,7 @@ class _AddScreenState extends State<AddScreen> {
                             }
                           },
                         decoration: InputDecoration(
-                            hintText:'Write your post here',
+                            hintText:'Write your post here',//${getLang(context,"Writeyourposthere")}
                             hintStyle: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold

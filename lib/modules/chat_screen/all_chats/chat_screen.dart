@@ -14,9 +14,7 @@ class ChatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<ChatCubit,ChatState>(
       listener:(context , state){
-        if(state is ChatSuccessState){
 
-        }
       } ,
       builder: (context , state){
         var Cubit = ChatCubit.get(context);

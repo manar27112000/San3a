@@ -1,5 +1,6 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
+import 'package:san3a/shared/component/applocal.dart';
 import 'package:san3a/shared/component/component.dart';
 import 'package:san3a/shared/styles/colors.dart';
 
@@ -17,7 +18,7 @@ class ProSendUser extends StatelessWidget {
               Navigator.pop(context);
             },
             icon:Icon(Icons.arrow_back,color: Colors.black,),),
-          title: Text('Profile',
+          title: Text( '${getLang(context,"Profile")}',
         style: TextStyle(
           color: Colors.black,
               fontSize: 18,
@@ -62,7 +63,7 @@ class ProSendUser extends StatelessWidget {
                             height: 10.0,
                           ),
                           defaultButton(
-                            text: 'Send Message',
+                            text: '${getLang(context,"SendMessage")}',
                             function: () {},
                             background: defaultColor,
                             width: 160.0,
@@ -95,8 +96,8 @@ class ProSendUser extends StatelessWidget {
               Column(
                 children: [
                   Row(
-                    children: const [
-                      Text('Details',
+                    children:  [
+                      Text('${getLang(context,"Details")}',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: textColor,
@@ -112,12 +113,12 @@ class ProSendUser extends StatelessWidget {
                   Row(
                     children: [
                       Row(
-                        children: const [
+                        children:  [
                           Icon(Icons.home),
                           SizedBox(
                             width: 5.0,
                           ),
-                          Text('Lives in',
+                          Text('${getLang(context,"Livesin")}',
                               style: TextStyle(color: textColor, fontSize: 18)),
                         ],
                       ),
@@ -126,7 +127,7 @@ class ProSendUser extends StatelessWidget {
                       ),
                       Row(
                         children: const [
-                          Text('AlHaram street',
+                          Text('AlHaram street',/////////////////////////////////////////
                               style: TextStyle(
                                 color: textColor,
                               )),
@@ -141,12 +142,12 @@ class ProSendUser extends StatelessWidget {
                   Row(
                     children: [
                       Row(
-                        children: const [
+                        children:  [
                           Icon(Icons.add_location_alt_sharp),
                           SizedBox(
                             width: 5.0,
                           ),
-                          Text('From',
+                          Text('${getLang(context,"From")}',
                               style: TextStyle(color: textColor, fontSize: 18)),
                         ],
                       ),
@@ -155,7 +156,7 @@ class ProSendUser extends StatelessWidget {
                       ),
                       Row(
                         children: const [
-                          Text('Giza',
+                          Text('Giza',/////////////////////////////////////////////////////////y
                               style: TextStyle(
                                 color: textColor,
                               )),

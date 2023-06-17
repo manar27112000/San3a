@@ -20,7 +20,10 @@ class ChatErrorState extends ChatState {
 }
 
 class MessageLoadingState extends ChatState {}
-class MessageSuccessState extends ChatState {}
+class MessageSuccessState extends ChatState {
+  MessagesModel? messageModel;
+   MessageSuccessState(this.messageModel);
+}
 class MessageErrorState extends ChatState {
   final String error;
   MessageErrorState(this.error);
@@ -28,9 +31,6 @@ class MessageErrorState extends ChatState {
 
 class SendLoadingState extends ChatState {}
 class SendSuccessState extends ChatState {
-  SendMessage? sendMessagel;
-
-  SendSuccessState(this.sendMessagel);
 }
 
 class SendErrorState extends ChatState {

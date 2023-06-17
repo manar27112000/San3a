@@ -30,6 +30,7 @@ class ApiConst{
   static const String getOrderId="/ecommerce/orders";
   static const String getPaymentId="/acceptance/payment_keys";
   static const String getRefCode="/api/acceptance/payments/pay";
+  static String visaUrl='$baseUrl/acceptance/iframes/759242?payment_token=$finalToken';
   static String paymentFirstToken="";
   static String payementOrderId="";
   static String finalToken="";
@@ -37,3 +38,5 @@ class ApiConst{
   static String inegrationIdKiosk='3887197';
   static String integrationIdCart='3801918';
 }
+
+bool isArabic =true ;

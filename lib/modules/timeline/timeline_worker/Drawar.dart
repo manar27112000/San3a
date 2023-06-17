@@ -20,7 +20,15 @@ class _DrawerScreenState extends State<DrawerScreen> {
       controller: zoomDrawerController,
       menuScreen: Filter_screen(),
       mainScreen: San3aLayout(),
-      clipMainScreen: false,
+     menuBackgroundColor: Colors.lightBlue,
+     // clipMainScreen: true,
+      showShadow: true,
+      style: DrawerStyle.defaultStyle,
+    borderRadius: 30,
+      angle: 0.0,
+
+
+
 
 
     );

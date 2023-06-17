@@ -31,6 +31,7 @@ PreferredSizeWidget defaultAppBar({
 
       elevation: 0,
       titleSpacing: 20.0,
+      centerTitle: true,
       title: Text(
         text,
         style: const TextStyle(

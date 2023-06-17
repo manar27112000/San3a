@@ -5,6 +5,7 @@ import 'package:san3a/modules/Login_Screen/Login_Screen.dart';
 import 'package:san3a/modules/otp_Screen/OTP_For_Forget/Cudit/cubit.dart';
 import 'package:san3a/modules/otp_Screen/OTP_For_Forget/Cudit/states.dart';
 import 'package:san3a/modules/rereset/Reset_Password/Resetpassword.dart';
+import 'package:san3a/shared/component/applocal.dart';
 import 'package:san3a/shared/component/component.dart';
 import 'package:san3a/shared/component/constant.dart';
 import '../../../shared/network/local/cache_helper.dart';
@@ -72,8 +73,8 @@ class OTPscreen2 extends StatelessWidget {
                                     ),
                                   ),
                                   const SizedBox(height: 15.0),
-                                  const Text(
-                                    'We have sent to you an OTP',
+                                   Text(
+                                    '${getLang(context,"WehavesenttoyouanOTP")}',
                                     style: TextStyle(
                                       fontSize: 30.0,
                                       fontWeight: FontWeight.bold,
@@ -103,7 +104,7 @@ class OTPscreen2 extends StatelessWidget {
                                         },
                                         validator: (value) {
                                           if (value!.isEmpty) {
-                                            return 'Enter The Code sent to your Number/Email';
+                                            return '${getLang(context,"EnterTheCodesenttoyourNumber/Email")}';
                                           } else {
                                             return null;
                                           }
@@ -112,7 +113,7 @@ class OTPscreen2 extends StatelessWidget {
                                         decoration: InputDecoration(
                                           // hintText: 'Email Adress',
                                           // prefixIcon: Icon(Icons.phone),
-                                          labelText: ' Enter Code sent to You ',
+                                          labelText: '${getLang(context,"EnterCodesenttoYou")}',
                                           border: OutlineInputBorder(
                                               borderRadius: const BorderRadius.all(
                                                   Radius.circular(50))),
@@ -129,14 +130,14 @@ class OTPscreen2 extends StatelessWidget {
                                           child: default_Button(
                                             function: () {
                                               if (formKey.currentState!.validate()) {
-                                                if(typesend == "email"){
+                                                if(typesend == "email"){//////////////////////////////////////////////////////
                                                   OtpForgetCubit.get(context).OTPPostForEmail(otp: otpcontroller.text);
                                                 }else {
                                                   OtpForgetCubit.get(context).OTPPostForPhone(otp: otpcontroller.text, phone: phone,);
                                                 }
                                               }
                                             },
-                                            text: 'Confirm',
+                                            text:'${getLang(context,"Confirm")}',
                                             isUpperCase: false,
                                             textStyle: null,
                                           ),
@@ -155,7 +156,7 @@ class OTPscreen2 extends StatelessWidget {
                                                 ),
                                               );
                                             },
-                                            text: 'back',
+                                            text:'${getLang(context,"back")}',
                                             isUpperCase: false,
                                             textStyle: null,
                                             backgroundcolor: const Color(0xFFB6B7B7),
@@ -170,9 +171,9 @@ class OTPscreen2 extends StatelessWidget {
                                       child: Row(
                                         mainAxisAlignment: MainAxisAlignment.end,
                                         children: [
-                                          Text("Didn't Recieve? "),
+                                          Text('${getLang(context,"Didn'tRecieve?")}'),
                                           Text(
-                                            "sent agin",
+                                            '${getLang(context,"sentagin")}',
                                             style: TextStyle(
                                               color: const Color(0xff4377ec),
                                               fontWeight: FontWeight.bold,

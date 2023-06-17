@@ -3,23 +3,47 @@ import 'package:flutter_animated_button/flutter_animated_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:path/path.dart';
+import 'package:path/path.dart';
+import 'package:san3a/models/on_borading_model.dart';
+import 'package:san3a/shared/component/appLocal.dart';
 import 'package:san3a/shared/component/component.dart';
 
 import '../Login_Screen/Login_Screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({Key? key}) : super(key: key);
+   OnboardingScreen({Key? key}) : super(key: key);
 
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
+
   int _currentIndex = 0;
   final PageController _pageController = PageController();
+  OnboardingModel? onboardingModel;
+
 
   @override
   Widget build(BuildContext context) {
+    List<OnboardingModel> tabs = [
+
+      OnboardingModel(
+        'assets/animations/plumbers.json',
+        '${getLang(context,"GetYourworker")}',
+      ),
+      OnboardingModel(
+        'assets/animations/chat.json',
+        '${getLang(context,"chatwithworkers")}'
+      ),
+      OnboardingModel(
+        'assets/animations/navigation.json',
+         '${getLang(context,"nearestplace")}'
+
+
+      ),
+    ];
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.blueAccent,
@@ -67,14 +91,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                               ),
                             ),
                             const SizedBox(height: 10),
-                            Text(
-                              tab.subtitle,
-                              style: const TextStyle(
-                                fontSize: 17.0,
-                                color: Colors.white70,
-                              ),
-                              textAlign: TextAlign.center,
-                            )
+                            // Text(
+                            //   tab.subtitle,
+                            //   style: const TextStyle(
+                            //     fontSize: 17.0,
+                            //     color: Colors.white70,
+                            //   ),
+                            //   textAlign: TextAlign.center,
+                            // )
                           ],
                         );
                       },
@@ -94,13 +118,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                   const SizedBox(height: 25),
                   Padding(
-                    padding: const EdgeInsets.all(15.0),
+                    padding:  EdgeInsets.all(15.0),
                     child: Column(
                       children: [
                         AnimatedButton(
                           height: 40,
                           width: double.infinity,
-                          text: 'next',
+                          text: '${getLang(context,"next")}',
                           textStyle: TextStyle(color: Colors.black,fontSize: 20),
                           isReverse: true,
                           selectedTextColor: Colors.black,
@@ -128,7 +152,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         AnimatedButton(
                           height: 40,
                           width: double.infinity,
-                          text: 'skip',
+                          text: '${getLang(context,"skip")}',
                           textStyle: TextStyle(color: Colors.black,fontSize: 20),
                           isReverse: true,
                           selectedTextColor: Colors.black,
@@ -210,28 +234,5 @@ class _DotIndicator extends StatelessWidget {
   }
 }
 
-class OnboardingModel {
-  final String lottieFile;
-  final String title;
-  final String subtitle;
 
-  OnboardingModel(this.lottieFile, this.title, this.subtitle);
-}
 
-List<OnboardingModel> tabs = [
-  OnboardingModel(
-    'assets/animations/plumbers.json',
-    'Get Your worker ',
-    'Remember to keep track of your professional accomplishments.',
-  ),
-  OnboardingModel(
-    'assets/animations/chat.json',
-    'chat with workers',
-    'Take control of notifications,\n collaborate live or on your own time\nGet notified when worker ready.',
-  ),
-  OnboardingModel(
-    'assets/animations/navigation.json',
-    ' nearest place',
-    'You can communicate with the worker \nclosest to you and repent',
-  ),
-];

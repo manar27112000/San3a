@@ -7,6 +7,7 @@ import 'package:san3a/modules/Login_Screen/Cubit/cubit.dart';
 import 'package:san3a/modules/add_post_screen/add_post_screen.dart';
 import 'package:san3a/modules/pro_woker/profile_cubit/profile_worker_cubit.dart';
 import 'package:san3a/modules/pro_woker/profile_cubit/profile_worker_states.dart';
+import 'package:san3a/shared/component/applocal.dart';
 import 'package:san3a/shared/component/component.dart';
 import 'package:san3a/shared/component/constant.dart';
 import 'package:san3a/shared/styles/colors.dart';
@@ -33,7 +34,7 @@ class ProWorker extends StatelessWidget {
                   Navigator.pop(context);
                 },
                 icon:Icon(Icons.arrow_back,),),
-              title: Text('Profile',
+              title: Text('${getLang(context,"Profile")}',
                 style:Theme.of(context).textTheme.bodyText1),
               centerTitle: true,
             ),
@@ -127,7 +128,7 @@ class ProWorker extends StatelessWidget {
                             children: [
                               Row(
                                 children:  [
-                                  Text('Details',
+                                  Text('${getLang(context,"Details")}',
                                       style:Theme.of(context).textTheme.bodyText1!.copyWith(
                                           fontWeight: FontWeight.bold,
                                           letterSpacing: 2.0,
@@ -137,7 +138,7 @@ class ProWorker extends StatelessWidget {
                               const SizedBox(
                                 height: 15.0,
                               ),
-                              if(Cubit.getProfile!.data!.userData!.role != 'customer')
+                              if(Cubit.getProfile!.data!.userData!.role != 'customer')/////////////////////////////////////////////////
                                 Row(
                                   children: [
                                     Row(
@@ -146,7 +147,7 @@ class ProWorker extends StatelessWidget {
                                         SizedBox(
                                           width: 5.0,
                                         ),
-                                        Text('Job',
+                                        Text('${getLang(context,"Job")}',
                                             style: Theme.of(context).textTheme.bodyText1!.copyWith( fontSize: 18)),
                                       ],
                                     ),
@@ -155,7 +156,7 @@ class ProWorker extends StatelessWidget {
                                     ),
                                     Row(
                                       children:  [
-                                        Text('Mechanices',
+                                        Text('Mechanices',/////////////////////////////////////////////////////////////////
                                             style: Theme.of(context).textTheme.bodyText1,
           )],
                                     )
@@ -172,7 +173,7 @@ class ProWorker extends StatelessWidget {
                                       SizedBox(
                                         width: 5.0,
                                       ),
-                                      Text('Lives in',
+                                      Text('${getLang(context,"Livesin")}',
                                           style: Theme.of(context).textTheme.bodyText1!.copyWith( fontSize: 18)),
                                     ],
                                   ),
@@ -181,7 +182,7 @@ class ProWorker extends StatelessWidget {
                                   ),
                                   Row(
                                     children:  [
-                                      Text('AlHaram street',
+                                      Text('AlHaram street',//////////////////////////////////////////////////////////////
                                           style: Theme.of(context).textTheme.bodyText1,
                                       )],
                                   )
@@ -190,7 +191,7 @@ class ProWorker extends StatelessWidget {
                               const SizedBox(
                                 height: 15.0,
                               ),
-                              if(Cubit.getProfile!.data!.userData!.role! != 'customer')
+                              if(Cubit.getProfile!.data!.userData!.role! != 'customer')//////////////////////////////////////////
                                 Row(
                                   children: [
                                     Row(
@@ -199,7 +200,7 @@ class ProWorker extends StatelessWidget {
                                         SizedBox(
                                           width: 5.0,
                                         ),
-                                        Text('Born',
+                                        Text('Born',/////////////////////////////////////////////////////////////////
                                             style: Theme.of(context).textTheme.bodyText1!.copyWith( fontSize: 18)),
                                       ],
                                     ),
@@ -208,13 +209,13 @@ class ProWorker extends StatelessWidget {
                                     ),
                                     Row(
                                       children:  [
-                                        Text('25-11-2022',
+                                        Text('25-11-2022',////////////////////////////////////////////////////////////
                                             style: Theme.of(context).textTheme.bodyText1,
                                         )],
                                     )
                                   ],
                                 ),
-                              if(Cubit.getProfile!.data!.userData!.role! != 'customer')
+                              if(Cubit.getProfile!.data!.userData!.role! != 'customer')///////////////////////////////////////////////
                                 const SizedBox(
                                   height: 15.0,
                                 ),
@@ -226,7 +227,7 @@ class ProWorker extends StatelessWidget {
                                       SizedBox(
                                         width: 5.0,
                                       ),
-                                      Text('From',
+                                      Text('${getLang(context,"From")}',
                                           style:Theme.of(context).textTheme.bodyText1!.copyWith( fontSize: 18)),
                                     ],
                                   ),
@@ -235,7 +236,7 @@ class ProWorker extends StatelessWidget {
                                   ),
                                   Row(
                                     children:  [
-                                      Text('Giza',
+                                      Text('Giza',////////////////////////////////////////////////////////////
                                           style: Theme.of(context).textTheme.bodyText1),
                                     ],
                                   )

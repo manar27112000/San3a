@@ -1,0 +1,130 @@
+{
+  "Login": "تسجيل الدخول",
+"EmailAdress": "البريد الالكترونى",
+  "emailadressmustnotbeempty": "يجب ألا يكون عنوان البريد الإلكتروني فارغًا",
+  "Password": "كلمة المرور",
+  "passwordmustnotbeemptyandmustmorethan8": "يجب ألا تكون كلمة المرور فارغة ويجب أن تكون أكثر من 8",
+  "Forgotyourpassword?": "نسيت كلمة السر؟",
+  "orloginwith": "أو تسجيل الدخول باستخدام",
+  "Don'thaveanaccount?": "ليس لديك حساب؟",
+  "Createpost": "إنشاء منشور",
+  "Post": "منشور",
+  "Writeyourposthere": "اكتب منشورك هنا",
+  "ChangeYourEmail": " تغيير البريد الإلكتروني",
+  "EnteroldEmailAddress": " البريد الإلكتروني القديم",
+  "EmailNumbermustnotbeempty": "يجب ألا يكون رقم البريد الإلكتروني فارغًا",
+  "EnternewEmailAddress": "البريد الإلكتروني الجديد",
+  "Emailmustnotbeempty": "يجب ألا يكون البريد الإلكتروني فارغًا",
+  "next": "التالى",
+  "ChangeYourPassword":"تغيير كلمة المرور",
+  "EnterYouroldpassword": "أدخل كلمة مرورك القديمة",
+  "passwordmustnotbeempty":"يجب ألا تكون كلمة المرور فارغة",
+  "EnterYournewpassword":"أدخل كلمة المرور الجديدة",
+  "passwordmustnotbeempty":"يجب ألا تكون كلمة المرور فارغة",
+  "ConfirmnewPassword": "تأكيد كلمة المرور الجديدة",
+  "ChangeYourPhoneNumber": "تغيير رقم هاتفك",
+  "PhoneNumbermustnotbeempty": "رقم الهاتف يجب ألا يكون فارغًا",
+  "EnternewPhoneNumber": "أدخل رقم الهاتف الجديد",
+  "Change": "تغيير",
+  "next": "التالى",
+  "Home": "الصفحة الرئيسية",
+  "Notifi": "الاشعارات",
+  "Chat": "الرسائل",
+  "Setting": "الاعدادات",
+  "ChangeEmail": "تغيير البريد الإلكتروني",
+  "ChangePassword": "تغيير كلمة المرور",
+  "ChangePhone": "تغيير رقم الهاتف",
+  "Help": "المساعدة",
+  "UserName": "اسم المستخدم",
+  "EmailAddress": " البريد الإلكتروني",
+  "whatistheproblem": "ما المشكلة؟",
+  "Submit": "ارسال",
+  "DarkMode": "الوضع الداكن",
+  "Profile": "الصفحة الشخصية",
+  "SavedPosts":"العناصر المحفوظة",
+  "Payment": "الدفع",
+  "EditProfile": "تعديل الملف الشخصي",
+  "Language": "اللغة",
+  "ChangeLanguage": "تغيير اللغة",
+  "Arabic": "اللغة العربية",
+  "English": "اللغة الانجليزية",
+  "LogOut": "تسجيل الخروج",
+  "Areyousure": "هل أنت متأكد؟",
+  "No": "لا",
+  "Yes": "نعم",
+  "skip": "تخطى",
+  "GetYourworker": "\"احصل على العامل الخاص بك\" ،\n    \"تذكر أن تتبع إنجازاتك المهنية.\"،",
+  "chatwithworkers": "\"دردشة مع العمال\" ، \\ n \"تحكم في الإشعارات ، \\ n تعاون مباشرة أو في وقتك الخاص \\ n احصل على إشعار عندما يكون العامل جاهزًا. '، \\ n\"",
+  "nearestplace":"\"أقرب مكان\" ،\n    \"يمكنك التواصل مع العامل \\ n الأقرب إليك والتوبة\" ،",
+  "WehavesenttoyouanOTP": "لقد أرسلنا إليك OTP",
+  "EnterTheCodesenttoyourNumber": "أدخل الرمز المرسل إلى رقمك / بريدك الإلكتروني",
+  "EnterCodesenttoYou":"أدخل الرمز المرسل إليك",
+  "Confirm": "تأكيد",
+  "back": "رجوع",
+  "Didn'tRecieve?": "لم تستلم؟?",
+  "sentagin": "اعادة الارسال",
+  "SendMessage": "أرسل رسالة",
+  "Details": "التفاصيل",
+  "Livesin": "يعيش في",
+  "From": "من",
+  "Job": "الوظيفة",
+  "Selectoneoftheoptionsgivenbelowtoresetyourpassword": "حدد أحد الخيارات التالية لإعادة تعيين كلمة المرور الخاصة بك",
+  "email": "البريد الالكترونى",
+  "SentCodeViaEmail": "الرمز المرسل عبر البريد الإلكتروني",
+  "phone": "رقم الهاتف",
+  "SentCodeViaSMS":"الرمز المرسل عبر الرسائل القصيرة",
+  "Continue": "اكمل"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

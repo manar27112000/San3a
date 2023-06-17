@@ -36,7 +36,6 @@ class _TimeLineForUserState extends State<TimeLineForUser> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-
         key: scaffoldKey,
 //backgroundColor: Color(0xFFB6EAFA),
         body:
@@ -84,7 +83,7 @@ class _TimeLineForUserState extends State<TimeLineForUser> {
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),
                   child: Container(
-                    height: itemSize,
+                    height: 120,
                     width: double.infinity,
                     alignment: Alignment.topCenter,
 
@@ -108,40 +107,61 @@ class _TimeLineForUserState extends State<TimeLineForUser> {
                     child:  Padding(
 
                       padding: const EdgeInsets.all(10.0),
-                      child: Row(
+                      child:ListTile(
+                        leading:  const CircleAvatar(
+                          radius: 25.0,
+                          backgroundImage: NetworkImage('https://via.placeholder.com/180'),
+                          backgroundColor: Colors.transparent,
+                        ),
 
-                          crossAxisAlignment:CrossAxisAlignment.start,
+                        title:  const Text(
+                          'Manar Adel',
+                          textScaleFactor: 1.3,style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                       // trailing: const Icon(Icons.send_outlined),
+                        subtitle:  const Column(
+                          mainAxisAlignment:MainAxisAlignment.start,
                           children: [
-                            CircleAvatar(
-                              radius: 40.0,
-                              backgroundImage:
-                              NetworkImage('https://via.placeholder.com/180'),
-                              backgroundColor: Colors.transparent,
-                            ),
-                            SizedBox(
-                              width: 15,
-                            ),
-                            Column(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.all(2.0),
-                                  child: SizedBox(
-                                    height: 35,
-                                    child: Wrap(children: [Container(child: Text("Manar Adel Ahmed",
-                                      style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),width:200,),
-                                    ]),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 50,
-                                  child: Wrap(children: [Container(child: Text("Manar Adel Ahmed Manar Adel Ahmed Manar Adel Ahmed   ",
-                                    style: TextStyle(fontSize: 18),maxLines: 2,),width:200,),
-                                  ]),
-                                )
-                              ],
-                            )
+                          Row(
+                            children: [
+                              Icon(
+                                Icons.star,
+                                size: 17,
+                                color: Color(0xffe59819),
+                              ),
+                              Icon(
+                                Icons.star,
+                                size: 17,
 
-                          ]),
+                                color: Color(0xffe59819),
+                              ),
+                              Icon(
+                                Icons.star,
+                                size: 17,
+
+                                color: Color(0xffe59819),
+                              ),
+                              Icon(     size: 17,
+                                Icons.star_border,
+                                color: Color(0xffe59819),
+                              ),
+                              Icon(
+                                size: 17,
+                                Icons.star_border,
+                                color: Color(0xffe59819),
+                              ),
+                            ],
+                          ),
+                          Text('job title or describtion',maxLines: 2),
+
+
+                        ],),
+                        selected: true,
+                        onTap: () {
+
+                        },
+                      ),
+
                     ),
                   ),
                 )));}

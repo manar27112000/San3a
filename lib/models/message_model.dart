@@ -1,13 +1,15 @@
-class MessageModel {
-  bool? status;
-  String? message;
+class MessagesModel {
+  late bool status;
+  late String message;
+  late String chatID;
   List<Data>? data;
 
 
 
-  MessageModel.fromJson(Map<String, dynamic> json) {
+  MessagesModel.fromJson(Map<String, dynamic> json) {
     status = json['status'];
     message = json['message'];
+    chatID = json['chatID'];
     if (json['data'] != null) {
       data = <Data>[];
       json['data'].forEach((v) {

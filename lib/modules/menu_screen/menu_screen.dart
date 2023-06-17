@@ -13,7 +13,9 @@ import 'package:san3a/modules/help/help_screen.dart';
 import 'package:san3a/modules/payment_screen/paymentScreen.dart';
 import 'package:san3a/modules/pro_woker/pro_worker.dart';
 import 'package:san3a/modules/saved_posts/saved_posts.dart';
+import 'package:san3a/modules/timeline/timeline_user/timeline_user.dart';
 import 'package:san3a/modules/timeline/timeline_worker/timeline_worker.dart';
+import 'package:san3a/shared/component/applocal.dart';
 
 import 'package:san3a/shared/component/component.dart';
 import 'package:san3a/shared/component/constant.dart';
@@ -80,7 +82,7 @@ class _MenuState extends State<MenuScreen> {
                              Padding(
                               padding: EdgeInsets.only(left: 16.0),
                               child: Text(
-                                'Dark Mode',
+                               '${getLang(context,"DarkMode")}',
                                 style:Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 24,fontWeight: FontWeight.bold) ,
                               ),
                             ),
@@ -111,7 +113,7 @@ class _MenuState extends State<MenuScreen> {
                         },
                         color: Colors.orange,
                         icon: Icons.camera_alt_outlined,
-                        text: 'Profile',
+                        text: '${getLang(context,"Profile")}',
                           context: context
                       ),
                       San3aLayoutCubit.get(context).isOpen ?  myDivider() : myDividor2() ,
@@ -119,14 +121,14 @@ class _MenuState extends State<MenuScreen> {
                         fun: () {navigateTo(context, SavedPosts());},
                         color: Colors.blue,
                         icon: Icons.save_outlined,
-                        text: 'Saved Posts',
+                        text: '${getLang(context,"SavedPosts")}',
                         context: context
                       ),
                       San3aLayoutCubit.get(context).isOpen ?  myDivider() : myDividor2() ,
                       MenuPage(
                         color: Colors.pink,
                         icon: Icons.payments_outlined,
-                        text: 'Payment',
+                        text: '${getLang(context,"Payment")}',
                           fun: () {navigateTo(context, PaymentScreen()) ; },
                           context: context
                       ),
@@ -134,7 +136,7 @@ class _MenuState extends State<MenuScreen> {
                       MenuPage(
                         color: Colors.purple,
                         icon: Icons.edit_note_outlined,
-                        text: 'Edit Profile',
+                        text: '${getLang(context,"EditProfile")}',
                         fun: () { navigateTo(context, Edit_profile()); },
                           context: context
                       ),
@@ -147,7 +149,7 @@ class _MenuState extends State<MenuScreen> {
                               padding: EdgeInsets.only(left: 16.0),
 
                               child: Text(
-                                'Language',
+                               '${getLang(context,"Language")}',
                                 style: Theme.of(context).textTheme.bodyText1!.copyWith(fontSize: 20, fontWeight: FontWeight.bold),
                               ),
                             ),
@@ -165,7 +167,7 @@ class _MenuState extends State<MenuScreen> {
                                         child:AlertDialog(
                                           insetPadding: EdgeInsets.all(10),
 
-                                          title: const Text(" Change Language"),
+                                          title:  Text('${getLang(context,"ChangeLanguage")}',),
 
                                           actions: <Widget>[
                                             Container(
@@ -175,13 +177,13 @@ class _MenuState extends State<MenuScreen> {
                                                   TextButton(
                                                       onPressed: () {
                                                       },
-                                                      child: const Text("Arabic")),
+                                                      child: Text('${getLang(context,"Arabic")}',),),
                                                   const Spacer(),
                                                   TextButton(
                                                       onPressed: () {
 
                                                       },
-                                                      child: const Text("English")),
+                                                      child: Text('${getLang(context,"English")}',),)
                                                 ],
                                               ),
                                             ),
@@ -198,7 +200,7 @@ class _MenuState extends State<MenuScreen> {
                       MenuPage(
                         color: Colors.teal,
                         icon: Icons.help_outline_outlined,
-                        text: 'Help',
+                        text: '${getLang(context,"Help")}',
                         fun: () { navigateTo(context, HelpScreen()); },
                           context: context
                       ),
@@ -207,7 +209,7 @@ class _MenuState extends State<MenuScreen> {
                       MenuPage(
                         color: Colors.red,
                         icon: Icons.logout,
-                        text: 'LogOut',
+                        text: '${getLang(context,"LogOut")}',
                         fun: () {showDialog(context: context,
                             builder:(BuildContext context){
                               return BackdropFilter(filter: ImageFilter.blur(sigmaY: 6,
@@ -215,15 +217,15 @@ class _MenuState extends State<MenuScreen> {
                                 child: AlertDialog(
 
                                   title: Row(
-                                    children: const [
-                                      Text("Log Out"),
+                                    children:  [
+                                      Text('${getLang(context,"LogOut")}'),
                                       SizedBox(
                                         height: 15,
                                       ),
                                       Icon(Icons.logout,size: 20,)
                                     ],
                                   ),
-                                  content: const Text("Are you sure ?"),
+                                  content:  Text('${getLang(context,"Areyousure")}'),
                                   actions: <Widget>[
                                     Container(
 
@@ -233,13 +235,13 @@ class _MenuState extends State<MenuScreen> {
                                               onPressed: () {
                                                 Navigator.of(context).pop();
                                               },
-                                              child: const Text("No")),
+                                              child:  Text('${getLang(context,"No")}')),
                                           const Spacer(),
                                           TextButton(
                                               onPressed: () {
-                                                navigateTo(context, TimeLineForWorker());
+                                                navigateTo(context, TimeLineForUser());
                                               },
-                                              child: const Text("Yes")),
+                                              child: Text('${getLang(context,"Yes")}')),
                                         ],
                                       ),
                                     ),

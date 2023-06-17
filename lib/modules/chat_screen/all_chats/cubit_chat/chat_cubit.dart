@@ -14,7 +14,7 @@ class ChatCubit extends Cubit<ChatState>{
   static ChatCubit get(context) => BlocProvider.of(context);
   ChatModel? chatModel;
 
-  MessageModel? messageModel;
+  MessagesModel? messageModel;
   SendMessage? sendMessage;
   void GetAllChats({required String token}) {
     emit(ChatLoadingState());
@@ -24,7 +24,7 @@ class ChatCubit extends Cubit<ChatState>{
         token: token
     ).then((value) {
       chatModel = ChatModel.fromJson(value.data);
-
+      print(chatModel.toString());
       emit(ChatSuccessState(chatModel ));
     }).catchError((error) {
       emit(ChatErrorState(error.toString()));
@@ -32,7 +32,7 @@ class ChatCubit extends Cubit<ChatState>{
   }
 
 
-  void GetMessageChats({required int index}) {
+  Future<void> GetMessageChats({required int index}) async{
     emit(MessageLoadingState());
     DioHelper.postData(
         url: GETALLMESSAGE,
@@ -40,9 +40,9 @@ class ChatCubit extends Cubit<ChatState>{
         data: {
           'chatId': chatModel!.data![index].sId})
         .then((value) {
-      messageModel= MessageModel.fromJson(value.data);
+      messageModel= MessagesModel.fromJson(value.data);
 
-      emit(MessageSuccessState());
+      emit(MessageSuccessState(messageModel));
     }).catchError((error){
       emit(MessageErrorState(error.toString()));
       print(error.toString());
@@ -60,18 +60,29 @@ class ChatCubit extends Cubit<ChatState>{
           'text': content,
           'chatId': chatModel!.data![index].sId})
         .then((value) {
-          print(content.toString());
       sendMessage= SendMessage.fromJson(value.data);
-          // print(sendMessage!.data!.content);
-      emit(SendSuccessState(sendMessage));
+
     }).catchError((error){
       emit(SendErrorState(error.toString()));
-      print(error.toString());
-
-
     });
   }
 
+  void PostMessageFromPost({ required String content}) {
+    print(content.toString());
+    print(messageModel!.chatID);
+
+    DioHelper.postData(
+        url: SENDMESSAGE,
+        token: token,
+        data: {
+          'text': content,
+          'chatId': messageModel!.chatID})
+        .then((value) {
+      sendMessage= SendMessage.fromJson(value.data);
+    }).catchError((error){
+      emit(SendErrorState(error.toString()));
+    });
+  }
 
   Future<void> GetChatsFromPost({ required String idUser}) async {
     emit(MessageLoadingState());
@@ -81,15 +92,13 @@ class ChatCubit extends Cubit<ChatState>{
         data: {
           'id':idUser })
         .then((value) {
-      messageModel= MessageModel.fromJson(value.data);
+      messageModel= MessagesModel.fromJson(value.data);
       print(messageModel!.message);
 
-      print(messageModel!.data![0].text);
-      emit(MessageSuccessState());
+      emit(MessageSuccessState(messageModel));
     }).catchError((error){
       emit(MessageErrorState(error.toString()));
       print(error.toString());
-
 
     });
   }

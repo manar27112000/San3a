@@ -4,6 +4,7 @@ import 'package:san3a/modules/Register_Screen/Verfiy_SignUp/Choose_send/Cubit/ch
 import 'package:san3a/modules/Register_Screen/Verfiy_SignUp/Choose_send/Cubit/choose_send_states_Register.dart';
 import 'package:san3a/modules/otp_Screen/OTP_For_Register/OTPscreen1.dart';
 import 'package:san3a/modules/rereset/findaccount/FindAcount.dart';
+import 'package:san3a/shared/component/applocal.dart';
 import 'package:san3a/shared/component/component.dart';
 
 class choose_send_Register extends StatelessWidget {
@@ -50,7 +51,7 @@ class choose_send_Register extends StatelessWidget {
                             Container(
                               padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
                               child: Image(
-                                image: AssetImage('assets/images/img_3.png'),
+                                image: AssetImage('assets/images/img_3.png'),/////////////////////////////////////
                                 height: 120.0,
                                 width: 120.0,
                               ),
@@ -59,7 +60,8 @@ class choose_send_Register extends StatelessWidget {
                               height: 15.0,
                             ),
                             Text(
-                              'Select one of the options given below to reset your password.',
+                              '${getLang(context,"Selectoneoftheoptionsgivenbelowtoresetyourpassword")}'
+                             ,
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 30.0,
@@ -70,10 +72,10 @@ class choose_send_Register extends StatelessWidget {
                             Column(
                               children: [
                                 RadioListTile<String>(
-                                    value: "email",
+                                    value: '${getLang(context,"email")}',
                                     groupValue: ChooseSendCubitRegister.get(context).type,
                                     title: Text(
-                                      'Sent Code Via Email ${email}',
+                                       '${getLang(context,"SentCodeViaEmail")} ${email}',
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18.0,
@@ -96,10 +98,10 @@ class choose_send_Register extends StatelessWidget {
                                 ),
                                 RadioListTile<String>(
                                   //content
-                                    value: "phone",
+                                    value: '${getLang(context,"phone")}',
                                     groupValue: ChooseSendCubitRegister.get(context).type,
                                     title: Text(
-                                      'Sent Code Via SMS ${phone}',
+                                      '${getLang(context,"SentCodeViaSMS")} ${phone}',
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18.0,
@@ -124,14 +126,14 @@ class choose_send_Register extends StatelessWidget {
                               padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
                               child: default_Button(
                                 function: () {
-                                 if(ChooseSendCubitRegister.get(context).type == "email")
+                                 if(ChooseSendCubitRegister.get(context).type == "email")/////////////////////////////////////////
                                  {
                                    ChooseSendCubitRegister.get(context).SendOTP_To_Email(email: '${email}');
                                  }else{
                                    ChooseSendCubitRegister.get(context).SendOTP_To_Phone(phone: '${phone}');
                                  }
                                 },
-                                text: 'Continue',
+                                text:'${getLang(context,"Continue")}',
                                 isUpperCase: false,
                                 textStyle: null,
                               ),
@@ -148,7 +150,7 @@ class choose_send_Register extends StatelessWidget {
                                   ),
                                 );
                               },
-                              text: 'Not You?',
+                              text: '${getLang(context,"Not You?")}',
                               backgroundcolor: const Color(0xFFB6B7B7),
                               textStyle: null,
                             ),

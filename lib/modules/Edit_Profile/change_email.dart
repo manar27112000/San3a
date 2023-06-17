@@ -1,10 +1,9 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animated_button/flutter_animated_button.dart';
+import 'package:san3a/shared/component/applocal.dart';
 import 'package:san3a/shared/component/component.dart';
 
 import '../../animation.dart';
-import '../../header.dart';
 
 class Email_Edit extends StatelessWidget {
    Email_Edit({Key? key}) : super(key: key);
@@ -15,7 +14,7 @@ class Email_Edit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: defaultAppBar(text: 'Change Your Email ', func1: () {  }, func2: () {  }),
+      appBar: defaultAppBar(text: '${getLang(context,"ChangeYourEmail")}' , func1: () {  }, func2: () {  }),//${getLang(context,"ChangeYourEmail")}
       body: SingleChildScrollView(
         child: Center(
           child : Padding(
@@ -34,11 +33,11 @@ class Email_Edit extends StatelessWidget {
                 FadeAnimation(1.1, default_tTextFormField(
                   controller: old_emailcontroller,
                   keyboardType: TextInputType.emailAddress,
-                  labelText: 'Enter old Email Address',
+                  labelText: '${getLang(context,"EnteroldEmailAddress")}',//${getLang(context,"EnteroldEmailAddress")}
                   prefix: Icons.email,
                   validate: (String? value) {
                     if (value!.isEmpty) {
-                      return 'Email Number must not be empty';
+                      return '${getLang(context,"EmailNumbermustnotbeempty")}';//${getLang(context,"EmailNumbermustnotbeempty")}
                     }
                   },
                   onFieldSubmitted: (value) {
@@ -49,11 +48,11 @@ class Email_Edit extends StatelessWidget {
                FadeAnimation(1.2,  default_tTextFormField(
                  controller: new_emailcontroller,
                  keyboardType: TextInputType.emailAddress,
-                 labelText: 'Enter new Email Address',
+                 labelText: '${getLang(context,"EnternewEmailAddress")}',//${getLang(context,"EnternewEmailAddress")}
                  prefix: Icons.email,
                  validate: (String? value) {
                    if (value!.isEmpty) {
-                     return 'Email must not be empty';
+                     return '${getLang(context,"Emailmustnotbeempty")}';//
                    }
                  },
                  onFieldSubmitted: (value) {
@@ -64,7 +63,7 @@ class Email_Edit extends StatelessWidget {
                FadeAnimation(1.3,  AnimatedButton(
                  height: 40,
                  width: double.infinity,
-                 text: 'next',
+                 text: '${getLang(context,"next")}',//${getLang(context,"next")}
                  textStyle: TextStyle(color: Colors.black,fontSize: 20),
                  isReverse: true,
                  selectedTextColor: Colors.black,

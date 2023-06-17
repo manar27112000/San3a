@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:san3a/shared/component/applocal.dart';
 import 'package:san3a/shared/component/component.dart';
 
 class change_phone extends StatelessWidget {
@@ -17,7 +18,7 @@ class change_phone extends StatelessWidget {
           child: Center(
             child : Column(
               children: [
-                Text('Change Your Phone Number',
+                Text('${getLang(context,"ChangeYourPhoneNumber")}',//${getLang(context,"ChangeYourPhoneNumber")}
                 style: TextStyle(
                   fontSize: 30.0,
                   fontWeight: FontWeight.bold,
@@ -27,11 +28,11 @@ class change_phone extends StatelessWidget {
               default_tTextFormField(
                   controller: old_phonecontroller,
                   keyboardType: TextInputType.phone,
-                  labelText: 'Enter old Phone Number',
+                  labelText: '${getLang(context,"ChangeYourPhoneNumber")}',//${getLang(context,"ChangeYourPhoneNumber")}
                   prefix: Icons.phone,
                   validate: (String? value) {
                     if (value!.isEmpty) {
-                      return 'Phone Number must not be empty';
+                      return '${getLang(context,"PhoneNumbermustnotbeempty")}';
                     }
                   },
                   onFieldSubmitted: (value) {
@@ -42,11 +43,11 @@ class change_phone extends StatelessWidget {
                 default_tTextFormField(
                   controller: new_phonecontroller,
                   keyboardType: TextInputType.phone,
-                  labelText: 'Enter new Phone Number',
+                  labelText: '${getLang(context,"EnternewPhoneNumber")}',//${getLang(context,"EnternewPhoneNumber")}
                   prefix: Icons.phone,
                   validate: (String? value) {
                     if (value!.isEmpty) {
-                      return 'Phone Number must not be empty';
+                      return '${getLang(context,"PhoneNumbermustnotbeempty")}';
                     }
                   },
                   onFieldSubmitted: (value) {
@@ -55,7 +56,7 @@ class change_phone extends StatelessWidget {
                 ),
                 SizedBox(height: 15.0,),
             default_Button(
-              text: 'Change',
+              text: '${getLang(context,"Change")}',
               isUpperCase: false,
               textStyle: null,
               function: () {

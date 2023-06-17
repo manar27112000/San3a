@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:san3a/modules/Login_Screen/Cubit/cubit.dart';
 import 'package:san3a/modules/Login_Screen/Cubit/states.dart';
+import 'package:san3a/shared/component/applocal.dart';
 import 'package:san3a/shared/component/component.dart';
 import 'package:san3a/shared/styles/colors.dart';
 
@@ -51,7 +52,7 @@ class ProSendWorker extends StatelessWidget {
                               height: 10.0,
                             ),
                             defaultButton(
-                              text: 'Send Message',
+                              text: '${getLang(context,"SendMessage")}',
                               function: () {},
                               background: defaultColor,
                               width: 160.0,
@@ -98,7 +99,7 @@ class ProSendWorker extends StatelessWidget {
                                 ],
                               ),
                               const Text(
-                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elementum nulla, at ornare est',
+                                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae elementum nulla, at ornare est',/////////////////////////
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: TextStyle(fontSize: 12.0),
@@ -125,8 +126,8 @@ class ProSendWorker extends StatelessWidget {
                 Column(
                   children: [
                     Row(
-                      children: const [
-                        Text('Details',
+                      children:  [
+                        Text('${getLang(context,"Details")}',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: textColor,
@@ -140,12 +141,12 @@ class ProSendWorker extends StatelessWidget {
                     Row(
                       children: [
                         Row(
-                          children: const [
+                          children:  [
                             Icon(Icons.work_history),
                             SizedBox(
                               width: 5.0,
                             ),
-                            Text('Job',
+                            Text('${getLang(context,"Job")}',
                                 style: TextStyle(color: textColor, fontSize: 18)),
                           ],
                         ),
@@ -154,7 +155,7 @@ class ProSendWorker extends StatelessWidget {
                         ),
                         Row(
                           children: const [
-                            Text('Mechanices',
+                            Text('Mechanices',///////////////////////////////////////////////////////////////
                                 style: TextStyle(
                                   color: textColor,
                                 )),
@@ -168,12 +169,12 @@ class ProSendWorker extends StatelessWidget {
                     Row(
                       children: [
                         Row(
-                          children: const [
+                          children:  [
                             Icon(Icons.home),
                             SizedBox(
                               width: 5.0,
                             ),
-                            Text('Lives in',
+                            Text('${getLang(context,"Livesin")}',
                                 style: TextStyle(color: textColor, fontSize: 18)),
                           ],
                         ),
@@ -182,7 +183,7 @@ class ProSendWorker extends StatelessWidget {
                         ),
                         Row(
                           children: const [
-                            Text('AlHaram street',
+                            Text('AlHaram street',//////////////////////////////////////////////////
                                 style: TextStyle(
                                   color: textColor,
                                 )),
@@ -201,7 +202,7 @@ class ProSendWorker extends StatelessWidget {
                             SizedBox(
                               width: 5.0,
                             ),
-                            Text('Born',
+                            Text('Born',//////////////////////////////////////////////////////////
                                 style: TextStyle(color: textColor, fontSize: 18)),
                           ],
                         ),
@@ -210,7 +211,7 @@ class ProSendWorker extends StatelessWidget {
                         ),
                         Row(
                           children: const [
-                            Text('25-11-2022',
+                            Text('25-11-2022',//////////////////////////////////////////////////////
                                 style: TextStyle(
                                   color: textColor,
                                 )),
@@ -224,12 +225,12 @@ class ProSendWorker extends StatelessWidget {
                     Row(
                       children: [
                         Row(
-                          children: const [
+                          children:  [
                             Icon(Icons.add_location_alt_sharp),
                             SizedBox(
                               width: 5.0,
                             ),
-                            Text('From',
+                            Text('${getLang(context,"From")}',
                                 style: TextStyle(color: textColor, fontSize: 18)),
                           ],
                         ),
@@ -238,7 +239,7 @@ class ProSendWorker extends StatelessWidget {
                         ),
                         Row(
                           children: const [
-                            Text('Giza',
+                            Text('Giza',///////////////////////////////////////////////
                                 style: TextStyle(
                                   color: textColor,
                                 )),

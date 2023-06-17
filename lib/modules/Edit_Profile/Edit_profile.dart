@@ -5,6 +5,7 @@ import 'package:san3a/modules/Edit_Profile/change_email.dart';
 import 'package:san3a/modules/Edit_Profile/change_password.dart';
 import 'package:san3a/modules/Edit_Profile/change_phone.dart';
 import 'package:san3a/modules/timeline/timeline_worker/timeline_worker.dart';
+import 'package:san3a/shared/component/appLocal.dart';
 import 'package:san3a/shared/component/component.dart';
 
 class Edit_profile extends StatelessWidget {
@@ -19,19 +20,19 @@ class Edit_profile extends StatelessWidget {
           children: [
             EditProfile(
 
-              text: 'Change Email',
+              text:'${getLang(context,"ChangeEmail")}',
               fun: () {navigateTo(context, Email_Edit());},
 
             ), const SizedBox(height: 15.0,),
             EditProfile(
 
-              text: 'Change Password',
+              text: '${getLang(context,"ChangePassword")}',
               fun: () {navigateTo(context, Password_Edit());},
 
             ), const SizedBox(height: 15.0,),
             EditProfile(
 
-              text: 'Change Phone',
+              text: '${getLang(context,"ChangePhone")}',
               fun: () {navigateTo(context, change_phone());},
 
             ), const SizedBox(height: 15.0,),

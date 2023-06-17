@@ -7,7 +7,7 @@ import 'package:san3a/models/message_model.dart';
 
 class OwnFileCard extends StatelessWidget {
    OwnFileCard(this.messageModel,this.index,{Key? key,}) : super(key: key);
-  MessageModel? messageModel;
+   MessagesModel? messageModel;
   late int index;
   @override
   Widget build(BuildContext context) {

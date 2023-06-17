@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:san3a/models/chat_model.dart';
+import 'package:san3a/models/message_socket_model.dart';
 import 'package:san3a/modules/chat_screen/all_chats/cubit_chat/chat_cubit.dart';
 import 'package:san3a/modules/chat_screen/all_chats/cubit_chat/chat_state.dart';
 import 'package:san3a/modules/chat_screen/individual_chat_screen/individual_chat.dart';
@@ -11,7 +12,10 @@ class CustomCard extends StatelessWidget {
    CustomCard(this.index, {Key? key}) : super(key: key);
 
   late int index;
-  @override
+   int i =0;
+   MessageSocketModel? messageSocketModel;
+   List<MessageSocketModel> messages = [];
+   @override
   Widget build(BuildContext context) {
     return BlocConsumer<ChatCubit , ChatState>(
         listener: (context ,state){
@@ -20,9 +24,9 @@ class CustomCard extends StatelessWidget {
           var Cubit = ChatCubit.get(context);
         return InkWell(
           onTap: (){
-            Cubit.GetMessageChats(index: index);
-            navigateTo(context, IndividualChat(index));
+             Cubit.GetMessageChats(index: index);
 
+             navigateTo(context, IndividualChat( index , Cubit.chatModel!.data![index].sId!));
 
           },
           child: Column(

@@ -7,6 +7,7 @@ import 'package:san3a/modules/help/help_screen.dart';
 import 'package:san3a/modules/pro_woker/pro_worker.dart';
 import 'package:san3a/modules/saved_posts/saved_posts.dart';
 import 'package:san3a/modules/timeline/timeline_worker/timeline_worker.dart';
+import 'package:san3a/shared/component/applocal.dart';
 import 'package:san3a/shared/component/component.dart';
 import '../Edit_Profile/Edit_profile.dart';
 
@@ -54,7 +55,7 @@ class _MenuState extends State<MenuForUserScreen> {
                     },
                     color: Colors.orange,
                     icon: Icons.camera_alt_outlined,
-                    text: 'Profile',
+                    text: '${getLang(context,"Profile")}',
 
                   ),
                   myDivider(),
@@ -62,7 +63,7 @@ class _MenuState extends State<MenuForUserScreen> {
                     fun: () {navigateTo(context, SavedPosts());},
                     color: Colors.blue,
                     icon: Icons.save_outlined,
-                    text: 'Saved Posts',
+                    text: '${getLang(context,"SavedPosts")}',
 
                   ),
                   // myDivider(),
@@ -75,7 +76,7 @@ class _MenuState extends State<MenuForUserScreen> {
                   MenuPage(
                     color: Colors.purple,
                     icon: Icons.edit_note_outlined,
-                    text: 'Edit Profile', fun: () {navigateTo(context, Edit_profile());  },
+                    text: '${getLang(context,"EditProfile")}', fun: () {navigateTo(context, Edit_profile());  },
                   ),
                   myDivider(),
                   Padding(
@@ -86,10 +87,10 @@ class _MenuState extends State<MenuForUserScreen> {
                           Icons.dark_mode_outlined,
                           size: 40,
                         ),
-                        const Padding(
+                         Padding(
                           padding: EdgeInsets.only(left: 16.0),
-                          child: Text(
-                            'Dark Mode',
+                          child: Text('${getLang(context,"DarkMode")}'
+                            ,
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
@@ -118,11 +119,11 @@ class _MenuState extends State<MenuForUserScreen> {
                     padding: const EdgeInsets.all(16.0),
                     child: Row(
                       children: [
-                        const Padding(
+                         Padding(
                           padding: EdgeInsets.only(left: 16.0),
 
                           child: Text(
-                            'Language',
+                            '${getLang(context,"Language")}',
                             style: TextStyle(
                                 fontSize: 20, fontWeight: FontWeight.bold),
                           ),
@@ -143,7 +144,7 @@ class _MenuState extends State<MenuForUserScreen> {
 
                                       content: const Text(""),
 
-                                      title: const Text(" Change Language"),
+                                      title: Text('${getLang(context,"ChangeLanguage")}',),
 
                                       actions: <Widget>[
                                         Container(
@@ -152,14 +153,15 @@ class _MenuState extends State<MenuForUserScreen> {
                                             children: [
                                               TextButton(
                                                   onPressed: () {
+
                                                   },
-                                                  child: const Text("Arabic")),
+                                                  child:Text('${getLang(context,"Arabic")}',),),
                                               const Spacer(),
                                               TextButton(
                                                   onPressed: () {
 
                                                   },
-                                                  child: const Text("English")),
+                                                  child: Text('${getLang(context,"English")}',),)
                                             ],
                                           ),
                                         ),
@@ -176,13 +178,13 @@ class _MenuState extends State<MenuForUserScreen> {
                   MenuPage(
                     color: Colors.teal,
                     icon: Icons.help_outline_outlined,
-                    text: 'Help', fun: () { navigateTo(context, HelpScreen()); },
+                    text: '${getLang(context,"Help")}', fun: () { navigateTo(context, HelpScreen()); },
                   ),
                   myDivider(),
                   MenuPage(
                     color: Colors.red,
                     icon: Icons.logout,
-                    text: 'LogOut',
+                    text: '${getLang(context,"LogOut")}',
                     fun: () {showDialog(context: context,
                         builder:(BuildContext context){
                           return BackdropFilter(filter: ImageFilter.blur(sigmaY: 6,
@@ -190,15 +192,15 @@ class _MenuState extends State<MenuForUserScreen> {
                             child: AlertDialog(
 
                               title: Row(
-                                children: const [
-                                  Text("Log Out"),
+                                children:  [
+                                  Text('${getLang(context,"LogOut")}'),
                                   SizedBox(
                                     height: 15,
                                   ),
                                   Icon(Icons.logout,size: 20,)
                                 ],
                               ),
-                              content: const Text("Are you sure ?"),
+                              content:  Text('${getLang(context,"Areyousure")}'),
                               actions: <Widget>[
                                 Container(
                                   padding: const EdgeInsets.all(14),
@@ -208,14 +210,14 @@ class _MenuState extends State<MenuForUserScreen> {
                                           onPressed: () {
                                             Navigator.of(context).pop();
                                           },
-                                          child: const Text("No")),
+                                          child:  Text('${getLang(context,"No")}')),
                                       const Spacer(),
                                       TextButton(
                                           onPressed: () {
                                             navigateTo(context,
                                                 const TimeLineForWorker());
                                           },
-                                          child: const Text("Yes")),
+                                          child:  Text('${getLang(context,"Yes")}')),
                                     ],
                                   ),
                                 ),

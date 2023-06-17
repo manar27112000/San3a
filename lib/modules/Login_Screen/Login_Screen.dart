@@ -15,6 +15,7 @@ import 'package:san3a/modules/Login_Screen/Cubit/states.dart';
 import 'package:san3a/modules/Register_Screen/SignUp_Screen1.dart';
 import 'package:san3a/modules/rereset/findaccount/FindAcount.dart';
 import 'package:san3a/modules/timeline/timeline_worker/Drawar.dart';
+import 'package:san3a/shared/component/appLocal.dart';
 import 'package:san3a/shared/component/component.dart';
 import 'package:san3a/shared/component/constant.dart';
 
@@ -76,7 +77,8 @@ class Login_Screen extends StatelessWidget {
                     (height: 250,
                     child: FadeAnimation(1.2,HeaderWidget(_headerHeight, true,  Center(child: AnimatedTextKit(
                       animatedTexts: [
-                        WavyAnimatedText('Login',textStyle: TextStyle(fontSize: 35,color: Colors.yellowAccent,fontWeight: FontWeight.bold)),
+                        WavyAnimatedText("Login",textStyle: TextStyle(fontSize: 35,color: Colors.yellowAccent,fontWeight: FontWeight.bold)),
+                    //${getLang(context,"Login")}
                       ],
                       isRepeatingAnimation: true,
 
@@ -99,13 +101,13 @@ class Login_Screen extends StatelessWidget {
                               decoration: const InputDecoration(
                                 // hintText: 'Email Adress',
                                 icon: Icon(Icons.email),
-                                labelText: 'Email Adress',
+                                labelText: 'Email Adress',//${getLang(context,"EmailAdress")}
                                 // border: UnderlineInputBorder(
                                 //    ),
                               ),
                               validator: (value) {
                                 if (value == null || value.isEmpty ) {
-                                  return 'email adress must not be empty';
+                                  return 'email adress must not be empty';//${getLang(context,"emailadressmustnotbeempty")}
                                 }else{
                                   return null;
                                 }
@@ -134,12 +136,12 @@ class Login_Screen extends StatelessWidget {
                                   },
                                   icon: Icon(LoginCubit.get(context).suffix),
                                 ),
-                                labelText: 'Password',
+                                labelText: 'Password',//${getLang(context,"Password")}
 
                               ),
                               validator: (value) {
                                 if (value!.isEmpty) {
-                                  return 'password must not be empty and must more than 8';
+                                  return 'password must not be empty and must more than 8';//${getLang(context,"passwordmustnotbeemptyandmustmorethan8")}
                                 }
                                 // else if(value.length < 8){
                                 //   return 'password must more than 8 characters';
@@ -163,7 +165,7 @@ class Login_Screen extends StatelessWidget {
                                   );
                                 },
                                 child: const Text(
-                                  "Forgot your password?",
+                                  "Forgot your password?",//${getLang(context,"Forgot your password?")}
                                   style: TextStyle(
                                     color: Colors.blue,
                                     //const Color(0xff4377ec),
@@ -187,14 +189,14 @@ class Login_Screen extends StatelessWidget {
                                         );
                                       }
                                     },
-                                    text: 'Login',
+                                    text: 'Login',//${getLang(context,"Login")}
                                     isUpperCase: false,
                                     textStyle: null,
                                   ),
                               fallback: (context) => const Center(child: CircularProgressIndicator()),
                             )),
                             const SizedBox(height: 15.0),
-                            FadeAnimation(1.7,  Text('or login with',
+                            FadeAnimation(1.7,  Text('or login with',//${getLang(context,"orloginwith")}
                               style: TextStyle(
                                 color: Colors.blue,
                               ),
@@ -227,7 +229,7 @@ class Login_Screen extends StatelessWidget {
                               child: Text.rich(
                                   TextSpan(
                                       children: [
-                                        const TextSpan(text: "Don't have an account? "),
+                                        const TextSpan(text: "Don't have an account? "),//${getLang(context,"Don'thaveanaccount?")}
                                         TextSpan(
                                           text: 'Sign up',
                                           recognizer: TapGestureRecognizer()

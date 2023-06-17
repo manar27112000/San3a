@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:san3a/shared/component/applocal.dart';
 import 'package:san3a/shared/component/component.dart';
 
 class Password_Edit extends StatelessWidget {
@@ -18,7 +19,7 @@ class Password_Edit extends StatelessWidget {
             child : Column(
               children: [
                 Center(
-                  child: Text('Change Your  Password',
+                  child: Text('${getLang(context,"ChangeYourPassword")}',//${getLang(context,"ChangeYourPassword")}
                     style: TextStyle(
                       fontSize: 30.0,
                       fontWeight: FontWeight.bold,
@@ -29,12 +30,12 @@ class Password_Edit extends StatelessWidget {
                 default_tTextFormField(
                   controller: old_passcontroller,
                   keyboardType: TextInputType.number,
-                  labelText: 'Enter Your old password',
+                  labelText: '${getLang(context,"EnterYouroldpassword")}',//${getLang(context,"EnterYouroldpassword")}
                   prefix: Icons.lock,
                   suffix: Icons.visibility_off_outlined,
                   validate: (String? value) {
                     if (value!.isEmpty) {
-                      return 'password must not be empty';
+                      return '${getLang(context,"password mustnotbeempty")}';//${getLang(context,"password mustnotbeempty")}
                     }
                   },
                   onFieldSubmitted: (value) {
@@ -45,12 +46,12 @@ class Password_Edit extends StatelessWidget {
                 default_tTextFormField(
                   controller: new_passcontroller,
                   keyboardType: TextInputType.number,
-                  labelText: 'Enter Your new password',
+                  labelText: '${getLang(context,"EnterYournewpassword")}',//${getLang(context,"EnterYournewpassword")}
                   prefix: Icons.lock,
                   suffix: Icons.visibility_off_outlined,
                   validate: (String? value) {
                     if (value!.isEmpty) {
-                      return 'password must not be empty';
+                      return '${getLang(context,"passwordmustnotbeempty")}';//${getLang(context,"passwordmustnotbeempty")}
                     }
                   },
                   onFieldSubmitted: (value) {
@@ -61,12 +62,12 @@ class Password_Edit extends StatelessWidget {
                 default_tTextFormField(
                   controller: new_confpasscontroller,
                   keyboardType: TextInputType.number,
-                  labelText: 'Confirm new Password',
+                  labelText: '${getLang(context,"ConfirmnewPassword")}',//${getLang(context,"ConfirmnewPassword")}
                   prefix: Icons.lock,
                   suffix: Icons.visibility_off_outlined,
                   validate: (String? value) {
                     if (value!.isEmpty) {
-                      return 'Password must not be empty';
+                      return '${getLang(context,"passwordmustnotbeempty")}y';//${getLang(context,"passwordmustnotbeempty")}
                     }
                   },
                   onFieldSubmitted: (value) {
@@ -75,7 +76,7 @@ class Password_Edit extends StatelessWidget {
                 ),
                 SizedBox(height: 15.0,),
                 default_Button(
-                  text: 'Change Password',
+                  text: '${getLang(context,"ChangeYourPassword")}',//${getLang(context,"ChangeYourPassword")}
                   isUpperCase: false,
                   textStyle: null,
                   function: () {
